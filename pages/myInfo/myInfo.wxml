@@ -1,0 +1,41 @@
+<!--pages/myInfo/myInfo.wxml-->
+<view class="container">
+    <form bindsubmit="formSubmit">
+        <!-- 名称 -->
+        <view class="form-group">
+            <view class="label">名称</view>
+            <input class="input" type="text" name="name" value="{{userInfo.nickName}}" required />
+        </view>
+        <!-- 性别 -->
+        <view class="form-group">
+            <view class="label">性别</view>
+            <picker mode="selector" range="{{genderList}}" bindchange="genderChange">
+                <view class="picker">
+                    {{gender}}
+                </view>
+            </picker>
+        </view>
+        <!-- 年龄 -->
+        <view class="form-group">
+            <view class="label">年龄</view>
+            <input class="input" type="number" name="age" value="{{userInfo.age}}" />
+        </view>
+        <!-- 家庭地址 -->
+        <view class="form-group">
+            <view class="label">家庭地址</view>
+            <input class="input" type="text" name="address" value="{{userInfo.address}}" />
+        </view>
+        <!-- 电话 -->
+        <view class="form-group">
+            <view class="label">电话</view>
+            <input class="input" type="tel" name="phone" value="{{userInfo.phone}}" />
+        </view>
+        <!-- 邮箱地址 -->
+        <view class="form-group">
+            <view class="label">邮箱地址</view>
+            <input class="input" type="email" name="email" value="{{userInfo.email}}" />
+        </view>
+        <!-- 保存按钮 -->
+        <button formType="submit" class="btn-submit">保存</button>
+    </form>
+</view>

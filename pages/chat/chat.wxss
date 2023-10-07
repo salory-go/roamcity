@@ -1,0 +1,77 @@
+
+    .header {
+      height: 80rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1rpx solid #efefef;
+  }
+  
+  .avatar {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+  }
+  
+  .name {
+    font-size: 28rpx;
+    font-weight: bold;
+    margin-left: 10rpx;
+  }
+  
+  .chat-area {
+    /* overflow-y: scroll; */
+    border: 1rpx solid #efefef;
+  }
+  
+  .message-item {
+    height: 100rpx;
+    margin-bottom: 20rpx;
+  }
+  
+  .my-message {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-color: #f5f5f5;
+    padding: 10rpx;
+    border-radius: 8rpx;
+  }
+  
+  
+  .partner-message {
+    background-color: #fff;
+    padding: 10rpx;
+    border-radius: 8rpx;
+  }
+  
+  .partner-message .name {
+    font-size: 24rpx;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .input-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20rpx;
+  }
+  
+  .input-box {
+    height: 60rpx;
+    padding: 10rpx;
+    font-size: 28rpx;
+    border: 1rpx solid #ddd;
+    border-radius: 4rpx;
+    width: 1200rpx;
+  }
+
+  .send-button{
+      background: rgb(38, 175, 255);
+      width: 20rpx;
+      padding-left: 10rpx;
+      padding-right: 10rpx;
+  }
+  
+  

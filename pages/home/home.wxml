@@ -1,0 +1,17 @@
+<!--pages/home/home.wxml-->
+<view class="destination">
+  <block wx:for="{{ elements }}" wx:for-item="e" wx:key="id">
+
+    <view class="title">{{ e.title }}</view>
+    
+    <view class="list">
+      <view class="poi"   wx:for="{{ e.data }}" wx:for-item="city" wx:key="id" data-id="{{ city.id }}" bindtap="viewCity">
+        <image src="{{ city.cover }}"></image>
+        <view class="mask"></view>
+        <view class="name">{{ city.name }}</view>
+      </view>
+
+      </view>
+
+  </block>
+</view>

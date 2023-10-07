@@ -1,0 +1,39 @@
+<!--页面头部，显示“我的勋章”标题和勋章头部图片-->
+<view class="header">
+    <text>我的勋章</text>
+    <image src="/images/header/medalheader.png"></image>
+</view>
+
+<!--待获勋章部分-->
+<view class="c1">
+    <text>待获勋章</text>
+</view>
+
+<!--遍历待获勋章列表-->
+<view class="list">
+    <view wx:for="{{ medals }}" wx:for-item="m" class="medal" wx:key="index">
+        <!--显示待获勋章的封面图片-->
+        <image src="{{ m.medal.cover }}" mode="aspectFill" bindtap="navi" data-medal="{{m}}"></image>
+        <view class="info">
+            <!--显示待获勋章的名称-->
+            <view class="title">{{ m.medal.name }}</view>
+        </view>
+    </view>
+</view>
+
+<!--已获勋章部分-->
+<view class="c1">
+    <text>已获勋章</text>
+</view>
+
+<!--遍历已获勋章列表-->
+<view class="list">
+    <view wx:for="{{ medals }}" wx:for-item="m" class="medal" wx:key="id">
+        <!--如果勋章状态为已获得，则显示勋章封面图片-->
+        <image wx:if="{{m.medal.status}}" src="{{ m.medal.cover }}" mode="aspectFill" data-citywalk="{{item.medal.citiwalk}}"></image>
+        <view wx:if="{{m.medal.status}}" class="info">
+            <!--显示已获勋章的名称-->
+            <view class="title">{{ m.name }}</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,28 @@
+<!--pages/activity/activity.wxml-->
+<!-- 容器 -->
+<view class="container">
+    <!-- 活动列表 -->
+    <view class="activity-list">
+        <!-- 循环遍历活动列表 -->
+        <block wx:for="{{activityList}}" wx:key="index">
+            <!-- 活动项 -->
+            <view class="activity-item">
+                <!-- 活动信息 -->
+                <view class="activity-info">
+                    <!-- 活动名称 -->
+                    <text class="activity-name">{{item.name}}</text>
+                    <!-- 活动时间 -->
+                    <text class="activity-time">{{item.time}}</text>
+                    <!-- 活动地点 -->
+                    <text class="activity-place">{{item.place}}</text>
+                    <!-- 活动介绍 -->
+                    <text class="activity-intro">{{item.intro}}</text>
+                    <!-- 活动封面 -->
+                    <text class="activity-cover">{{item.cover}}</text>
+                </view>
+                <!-- 参与按钮 -->
+                <button data-index="{{index}}" class="activity-button" bindtap="joinActivity" type="primary">参与</button>
+            </view>
+        </block>
+    </view>
+</view>

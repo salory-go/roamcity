@@ -1,0 +1,210 @@
+/* pages/message/message.wxss */
+
+.header image {
+    height: 200rpx;
+}
+
+.J1 {
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+    display: flex;
+    align-items: center;
+    border-bottom: 1rpx solid #efefef;
+}
+
+.image {
+    width: 384rpx;
+    height: 23rpx;
+}
+
+.t1 {
+    text-align: left;
+    font-family: "SimSun", Arial, sans-serif;
+    font-size: 23px;
+    line-height: 1.5;
+    margin: 0rpx 20rpx;
+    margin-right: 350rpx;
+}
+
+.t2 {
+    text-align: left;
+    font-family: "SimSun", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 20rpx 40rpx;
+}
+
+.container {
+    padding-top: 20rpx;
+    display: flex;
+    border-bottom: 1rpx solid #efefef;
+    padding-bottom: 0;
+    align-items: center;
+    height: 100rpx;
+}
+
+.condition {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.rightArrow {
+    width: 72rpx;
+    height: 72rpx;
+    /* padding-left: 500rpx;
+    padding-right: 20rpx; */
+}
+
+.t3 {
+    text-align: left;
+    /* font-family: "SimSun", Arial, sans-serif; */
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 20rpx;
+
+    width: 90%;
+    font-family: PingFang SC;
+    font-weight: 400;
+    padding-left: 20rpx;
+}
+
+
+.window {
+    position: fixed;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20rpx;
+    border-radius: 10rpx;
+    box-shadow: 0 2rpx 5rpx rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+.task-passage {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30rpx;
+}
+
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.claim-button{
+    background-color: gray;
+    color: #fff;
+    font-size: 28rpx;
+    border-radius: 5rpx;
+    padding: 10rpx;
+    text-align: center;
+    margin-top: 30rpx;
+}
+
+.close-button {
+    background-color: #007aff;
+    color: #fff;
+    font-size: 28rpx;
+    border-radius: 5rpx;
+    padding: 10rpx;
+    text-align: center;
+    margin-top: 30rpx;
+}
+
+.task-title {
+    font-size: 50rpx;
+    position: relative;
+    padding-bottom: 20rpx;
+}
+
+.title-text{
+    position: relative;
+}
+
+.task-cancle{
+    position: fixed;
+    right: 0;
+    margin-right: 40rpx;
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.task-background {
+    padding: 10rpx;
+}
+
+.task-target {
+    padding: 10rpx;
+}
+
+.reward {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.reward-item {
+    text-align: right;
+    margin-bottom: 10px;
+    /* 添加底部间距 */
+    width: 20%;
+    height: 100rpx;
+    display: inline-block;
+    padding: 10rpx;
+}
+
+.reward-image {
+    width: 100%;
+    justify-content: center;
+    align-self: center;
+    height: 100rpx;
+}
+
+.reward-text {
+    font-size: 24rpx;
+    margin-left: 20%;
+}
+
+.input{
+    margin: 20rpx;
+    border: 3rpx solid #efefef;
+}
+
+.propBagWindow{
+    display: flex;
+    flex-direction: column;
+}
+
+.propBag-item{
+    width: 30%;
+    height: 200rpx;
+}
+
+.propBag-image{
+    width: 100%;
+    height: 180rpx;
+}
+
+.propBag-text{
+    font-size: 28rpx;
+    margin-left: 10%;
+}
+
+.propBag{
+    width: 100rpx;
+    height: 100rpx;
+    position: fixed;
+    top: 5%;
+    left: 85%;
+}
+
+.taskList{
+    width: 100rpx;
+    height: 100rpx;
+    position: fixed;
+    top: 5%;
+    left: 15%;
+}

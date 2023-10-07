@@ -1,0 +1,56 @@
+<view class="container">
+    <view class="profile">
+        <image class="avatar" src="{{userInfo.avatar}}"></image>
+        <view class="profile-info">
+            <text class="nickname">{{userInfo.nickName}}</text>
+        </view>
+    </view>
+
+    <view class="dynamic">
+        <textarea bindinput="inputChange" class="dynamic-textarea" placeholder="分享你的旅行经历、观点和评论"></textarea>
+        <button type="primary" bindtap="publishDynamic">发布</button>
+    </view>
+
+    <scroll-view scroll-y style="height:{{chatHeight-110}}px" class="dynamic-list" scroll-into-view="{{toView}}" id="chat-area">
+        <block wx:for="{{comments}}" wx:key="index">
+            <view class="dynamic-item">
+                <view class="dynamic-info">
+                    <!-- 动态用户信息 -->
+                    <view class="dynamic-user">
+                        <image class="avatar" src="{{item.user.avatar}}"></image>
+                        <text class="nickname">{{item.user.nickName}}</text>
+                    </view>
+
+                    <!-- 动态内容 -->
+                    <view class="dynamic-content">
+                        <view class="dynamic-text">{{item.content}}</view>
+                    </view>
+                </view>
+
+                <!-- 动态交互 -->
+                <view class="interaction">
+                    <button class="like-button" bindtap="interact" data-action="0">点赞</button>
+                    <button class="like-button" bindtap="interact" data-action="1">点踩</button>
+                    <button class="comment-button" bindtap="interact" data-action="2" data-areaid="{{item._id}}" data-index="{{index}}">评论</button>
+                    <button class="comment-button" bindtap="interact" data-action="3">转发</button>
+                </view>
+
+                <!-- 评论列表 -->
+                <view class="comments">
+                    <block wx:for="{{item.childComments}}" wx:key="commentIndex">
+                        <view class="comment">
+                            <image class="avatar" src="{{item.user.avatar}}"></image>
+                            <text class="nickname">{{item.user.nickName}}</text>
+                            <text class="comment-text">{{item.content}}</text>
+                        </view>
+                    </block>
+                </view>
+            </view>
+        </block>
+    </scroll-view>
+
+    <view class="input-area">
+        <input id="inputId"  class="input-box" placeholder="评论一下吧" bindinput="inputChange" value="{{inputValue}}" focus="{{inputFocus}}" auto-height></input>
+        <button class="send-button" bindtap="sendReply">发布</button>
+    </view>
+</view>

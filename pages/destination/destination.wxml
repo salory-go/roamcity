@@ -1,0 +1,59 @@
+<!-- 导入评分组件 -->
+<import src="../../components/widget/rating.wxml" />
+
+<!-- 头部 -->
+<view class="header">
+    <image style="width: 100%;" src="{{ city.cover }}"></image>
+    <view class="title">
+        <view class="h1">{{ city.name }}</view>
+        <view class="detail">{{ city.visited_count }}去过 / {{ city.wish_to_go_count }}喜欢</view>
+    </view>
+    <view class="photo"></view>
+    <view class="mask"></view>
+</view>
+
+<!-- 导航栏 -->
+<view class="nav">
+    <view class="button">
+        <image bindtap="viewActivity" src="../../images/destination/activity.png"></image>
+        <text>当地活动</text>
+    </view>
+    <view class="button">
+        <image bindtap="viewComment" src="../../images/destination/comment.png"></image>
+        <text>点评城市</text>
+    </view>
+    <view class="button">
+        <image bindtap="viewRestaurant" src="../../images/destination/order.png"></image>
+        <text>在线点餐</text>
+    </view>
+    <view class="button">
+        <image bindtap="viewTicket" src="../../images/destination/ticket.png"></image>
+        <text>门票预约</text>
+    </view>
+</view>
+
+<!-- 热门方案 -->
+<view wx:if="true" class="place">
+    <view class="h2">
+        <image src="../../images/destination/divide_l.png"></image>
+        <text>热门方案</text>
+        <image src="../../images/destination/divide_r.png"></image>
+    </view>
+
+    <view class="list">
+        <view wx:for="{{ schemes }}" wx:for-item="s" class="scheme" wx:key="index">
+            <image src="{{ s.cover }}" mode="aspectFill" bindtap="viewScheme" data-id="{{index}}"></image>
+            <view class="info">
+                <view class="title">{{ s.name }}</view>
+                <view class="rating">
+                    <!-- 使用评分组件 -->
+                    <template is="m-rating" data="{{count: s.rating, size: 's'}}" />
+                    <view class="count">{{ s.rating_users }}人点评</view>
+                </view>
+            </view>
+            <view class="mask"></view>
+        </view>
+    </view>
+
+    <view class="all" bindtap="viewPOIList">全部热门地点</view>
+</view>

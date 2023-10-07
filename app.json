@@ -1,0 +1,70 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/login/login",
+    "pages/home/home",
+    "pages/citywalk/citywalk",
+    "pages/my/my",
+    "pages/medal/medal",
+    "pages/destination/destination",
+    "pages/detail/detail",
+    "pages/myInfo/myInfo",
+    "pages/activity/activity",
+    "pages/comment/comment",
+    "pages/restaurant/restaurant",
+    "pages/ticket/ticket",
+    "pages/message/message",
+    "pages/chat/chat",
+    "pages/annoucement/annoucement"
+  ],
+  "plugins": {
+    "routePlan": {
+      "version": "1.0.19",
+      "provider": "wx50b5593e81dd937a"
+    },
+    "chooseLocation":{
+        "version":"1.0.10",
+        "provider":"wx76a9a06e5b4e693e"
+     }
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#2b4b6b",
+    "navigationBarTitleText": "CityWalk",
+    "navigationBarTextStyle":"white"
+  },
+  "permission": {
+    "scope.userLocation": {
+        "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    },
+    "scope.userFuzzyLocation": {
+        "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "requiredPrivateInfos": [ "getLocation"],
+  "requiredBackgroundModes": ["userInfo"],
+  "tabBar": {
+      "list": [{
+          "pagePath": "pages/home/home",
+          "text": "首页",
+          "iconPath": "/images/tab_icons/home.png",
+          "selectedIconPath": "/images/tab_icons/home-active.png"
+      },
+      {
+        "pagePath": "pages/citywalk/citywalk",
+        "text": "citywalk",
+        "iconPath": "/images/tab_icons/citywalk.png",
+        "selectedIconPath": "/images/tab_icons/citywalk-active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "个人中心",
+        "iconPath": "/images/tab_icons/my.png",
+        "selectedIconPath": "/images/tab_icons/my-active.png"
+      }
+      
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

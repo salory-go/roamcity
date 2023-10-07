@@ -1,0 +1,31 @@
+<!--pages/my/my.wxml-->
+<view class="top-bg"></view> <!-- 顶部背景 -->
+
+<view class="container">
+    <!-- 容器 -->
+
+    <view class="head-box">
+        <!-- 头像盒子 -->
+        <button open-type="chooseAvatar" class="avatar" bindchooseavatar="chooseAvatar">
+            <!-- 选择头像按钮 -->
+            <image class="head-img" src="{{userInfo.avatar}}"></image> <!-- 头像图片 -->
+        </button>
+    </view>
+
+    <view class="medal" bindtap="naviMedal">
+        <!-- 勋章视图 -->
+        <text class="medal-text">我的勋章</text> <!-- 勋章文本 -->
+    </view>
+
+    <navigator class="medal" url="/pages/myInfo/myInfo">
+        <!-- 个人信息导航 -->
+        <text class="medal-text">个人信息</text> <!-- 个人信息文本 -->
+    </navigator>
+
+    <view class="message"  catchtap="viewMessage">
+        <!-- 我的消息导航 -->
+        <text class="message-text">我的消息</text> <!-- 我的消息文本 -->
+        <image wx:if="{{messageStatus}}" class="mention" src="/images/myIcons/newMessage1.png"></image>
+    </view>
+
+</view>

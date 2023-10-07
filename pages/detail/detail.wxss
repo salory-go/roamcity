@@ -1,0 +1,47 @@
+/* pages/detail/detail.wxss */
+.container{
+    margin-top: 1000rpx;
+}
+
+.topic{
+    color: #5c5c5c;
+    text-align: center;
+    font-size: 40rpx;
+    font-weight: bold;
+    margin-bottom: 30rpx;
+  }
+.topic image{
+    width: 150rpx;
+    height: 10rpx;
+    position: relative;
+    top: -10rpx;
+  }
+  .theme {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: -250rpx;
+  }
+  .text {
+    margin-top: -200rpx;
+    color: rgb(20, 83, 20);
+    text-align: center;
+    font-size: 28rpx;
+    font-weight: bold;
+  }
+  .img-bottom {
+    width: 100px;
+    margin-top: -265rpx;
+  }
+.typesetting{
+    margin-top: -250rpx;
+}
+.typesetting text{
+    font-size: 26rpx;
+    margin-top: 20rpx;
+}
+.typesetting image {
+    width: 100%;
+  }

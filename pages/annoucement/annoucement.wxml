@@ -1,0 +1,21 @@
+<view class="page">
+  <view class="header">
+    <text class="title-text">系统通知</text>
+  </view>
+  
+  <scroll-view class="notification-list" scroll-y="true">
+    <view class="notification-item" wx:for="{{notification}}" wx:key="*this">
+      
+      <view class="notification-avatar">
+        <image class="avatar-img" src="{{item.avatar}}" />
+      </view>
+      
+      <view class="notification-content">
+        <text class="time">{{item.time}}</text>
+        <text class="message">{{item.title}}</text>
+        <text class="message">{{item.text}}</text>
+      </view>
+    </view>
+  </scroll-view>
+
+</view>

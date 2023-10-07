@@ -1,0 +1,44 @@
+.container {
+    padding: 20rpx;
+  }
+  
+  .activity-list {
+    margin-top: 20rpx;
+  }
+  
+  .activity-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20rpx;
+    padding: 20rpx;
+    border: 1rpx solid #ddd;
+    border-radius: 4rpx;
+  }
+  
+  .activity-info {
+    flex: 1;
+  }
+  
+  .activity-name {
+    font-size: 28rpx;
+    font-weight: bold;
+  }
+  
+  .activity-time {
+    color: #999;
+    margin-top: 10rpx;
+  }
+  
+  .activity-place {
+    color: #999;
+    margin-top: 10rpx;
+  }
+  
+  .activity-intro {
+    color: #666;
+    margin-top: 10rpx;
+  }
+  
+  

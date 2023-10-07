@@ -1,0 +1,19 @@
+<!-- 创建一个容器视图 -->
+<view class="container">
+    <!-- 使用wx:for循环遍历messageList数组，使用index作为key -->
+    <block wx:for="{{chatRooms}}" wx:key="index">
+        <!-- 创建一个消息项视图，绑定点击事件viewMessage，并传递index作为数据 -->
+        <view class="message-item" bindtap="viewMessage" data-index="{{index}}">
+            <!-- 创建一个头像图片，src属性绑定item.avatar -->
+            <image class="avatar" src="{{item.avatar}}"></image>
+            <!-- 创建一个消息信息视图 -->
+            <view class="message-info">
+                <!-- 创建一个消息名称文本，内容绑定item.name -->
+                <text class="message-name">{{item.name}}</text>
+                <!-- 创建一个消息内容文本，内容绑定item.content -->
+                <!-- <text class="message-content">{{item.content}}</text> -->
+            </view>
+            <image wx:if="{{item.status && item.senderId != userInfo._id}}" class="newMessage" src="/images/myIcons/newMessage1.png"></image>
+        </view>
+    </block>
+</view>

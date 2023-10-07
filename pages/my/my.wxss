@@ -1,0 +1,109 @@
+/* pages/contact/contact.wxss */
+
+page {
+    background-color: #f1f1f1;
+  }
+  .top-bg {
+    height: 260rpx;
+    /* background-color: #fa3534; */
+  }
+
+.container {
+    background-color: white;
+    margin-top: -120rpx;
+    border-top-left-radius: 50rpx;
+    border-top-right-radius: 50rpx;
+    padding: 0 20rpx;
+  }
+  
+  .head-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1rpx solid #fbdbdc;
+    padding-bottom: 20rpx;
+ 
+}
+.head-img {
+    width: 140rpx;
+    height: 140rpx;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: #fbdbdc;
+  }
+  /* pages/profile/profile.wxss */
+  .avatar {
+    margin-top: -80rpx;
+    font-weight: inherit;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
+  .avatar::after {
+    border: none;
+  }  
+  /* .name {
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 10rpx;
+  } */
+
+  .settings {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10rpx;
+    margin-left: 200rpx;
+  }
+  
+  .setting-icon {
+    width: 80rpx;
+    height: 80rpx;
+    mask-image: url('/images/pictures/settings.png');
+  }
+
+  .setting-text{
+      font-size: 24rpx;
+  }
+
+  .medal{
+    font-size: 36rpx;
+    align-self: flex-start;
+    height: 100rpx;
+    width: 100%;
+    border-bottom: 1rpx solid #efefef;
+    display: flex;
+  }
+
+  .medal-icon {
+    width: 80rpx;
+    height: 80rpx;
+    margin-left: 380rpx;
+    padding: 8rpx;
+  }
+
+  .medal-text{
+      padding: 20rpx;
+  }
+
+  .message{
+    font-size: 36rpx;
+    align-self: flex-start;
+    height: 100rpx;
+    width: 100%;
+    border-bottom: 1rpx solid #efefef;
+    display: flex;
+  }
+  .message-text{
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+    padding-left: 20rpx;
+  }
+  .mention{
+      height: 60rpx;
+      width: 60rpx;
+      align-self: top;
+  }
+

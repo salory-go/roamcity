@@ -1,0 +1,6 @@
+<!--pages/login/login.wxml-->
+<view>
+    <text class="welcome">欢迎使用</text>
+</view>
+
+<button type="primary" bindtap="login">授权登录</button>

@@ -1,0 +1,21 @@
+<view class="container">
+    <image class='background' src="/images/map.png" mode="aspectFill"></image>
+
+    <image class="props" src="/images/myIcons/propBag.png" style="width: 150rpx;height: 150rpx;" bindtap="showWindow"></image>
+
+    <view class="window" hidden="{{!showWindow}}">
+        <block wx:for="{{windowItems}}" wx:key="index">
+            <view class="props-item">
+                <image class="props-image" src="{{item.image}}"></image>
+                <text class="props-text">{{item.text}}</text>
+            </view>
+        </block>
+        <text class="text"></text>
+        <button class="close-button" bindtap="closeWindow">关闭</button>
+    </view>
+
+    <view class="info" hidden="{{!showInfo}}">
+        <text class="text">你好，这是起点</text>
+        <button class="close-button" bindtap="closeInfo">关闭</button>
+    </view>
+</view>

@@ -1,0 +1,27 @@
+<view class="container" height="{{windowHeight}}">
+    <view class="header">
+        <text class="name">{{partner.name}}</text>
+    </view>
+    <!-- 聊天区域 -->
+    <scroll-view scroll-y style="height:{{chatHeight-110}}px" class="chat-area" scroll-into-view="{{toView}}" id="chat-area">
+        <block wx:for="{{messageDetails}}" wx:key="index">
+            <view id='message{{index}}' class="message-item" wx:if="{{item.senderId == userInfo._id}}">
+                <view class="my-message">
+                    <text class="content">{{item.text}}</text>
+                    <image class="avatar" src="{{userInfo.avatar}}"></image>
+                </view>
+            </view>
+            <view id='message{{index}}' class="message-item" wx:else>
+                <view class="partner-message">
+                    <image class="avatar" src="{{partner.avatar}}"></image>
+                    <text class="content">{{item.text}}</text>
+                </view>
+            </view>
+        </block>
+    </scroll-view>
+    <!-- 输入区域 -->
+    <view class="input-area">
+        <input class="input-box" placeholder="请输入消息" bindinput="inputChange" value="{{inputValue}}"></input>
+        <button class="send-button" bindtap="sendMessage">发送</button>
+    </view>
+</view>

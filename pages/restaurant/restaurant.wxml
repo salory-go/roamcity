@@ -1,0 +1,23 @@
+<!-- 容器 -->
+<view class="container">
+    <!-- 预约列表 -->
+    <view class="booking-list">
+        <!-- 循环渲染预约项 -->
+        <block wx:for="{{bookingList}}" wx:key="index">
+            <!-- 预约项 -->
+            <view class="booking-item" bindtap="goToBookingDetail" data-index="{{index}}">
+                <!-- 预约信息 -->
+                <view class="booking-info">
+                    <!-- 预约名称 -->
+                    <text class="booking-name">{{item.name}}</text>
+                    <!-- 预约价格 -->
+                    <text class="booking-price">价格：{{item.price}}</text>
+                    <!-- 预约时间 -->
+                    <text class="booking-time">时间：{{item.time}}</text>
+                    <!-- 预约描述 -->
+                    <text class="booking-description">{{item.description}}</text>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

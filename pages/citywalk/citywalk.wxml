@@ -1,0 +1,66 @@
+<view>
+    <!--pages/map/map.wxml-->
+    <view class="header">
+        <image style="width: 100%;" src="/images/header/h1.png" mode="aspectFill"></image>
+    </view>
+
+    <view class="place">
+        <map id="myMap" subkey="{{key}}" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" layer-style="1" style="width: 100%; height: {{mapHeight-215}}px;" markers="{{markersShow}}" show-location="{{true}}" bindregionchange="regionChange" bindmarkertap="markerTap" polygons="{{polygon}}">
+        </map>
+    </view>
+
+    <view class="J1">
+        <text class="t1">途经点</text>
+        <text class="t2">已到达{{finished}}/{{all}}</text>
+    </view>
+
+    <view class="window" hidden="{{!showWindow}}">
+        <view class="task-passage">
+            <view class="task-title">
+                <text class="title-text">{{title}}</text>
+                <image class="task-cancle" bind:tap="closeWindow" src="/images/myIcons/cancle.png"></image>
+            </view>
+            <text class="task-background">{{background}}</text>
+            <text class="task-target">{{target}}</text>
+        </view>
+        <block class="reward" wx:for="{{rewards}}" wx:key="index">
+            <view class="reward-item">
+                <image class="reward-image" src="{{item.imageUrl}}"></image>
+            </view>
+        </block>
+        <input class="input" type="number" name="age" placeholder="请输入任务代码" value="{{password}}" bindinput="passwordChange" />
+        <view class="buttons">
+            <button wx:if="{{progress > 1}}" style="width:22vw" class="close-button" bindtap="turnLeft">上一页</button>
+
+            <button wx:if="{{claim}}" style="width:30vw" class="claim-button">领取</button>
+            <button wx:else style="width:30vw" class="close-button" bindtap="getReward">领取</button>
+
+            <button wx:if="{{progress < marker.progress}}" style="width:22vw" class="close-button" bindtap="turnRight">下一页</button>
+        </view>
+    </view>
+
+    <view hidden="{{!showTaskPoints}}" wx:for="{{markers}}" wx:for-item="marker" wx:key="id" class="container" bindtap="{{otherButtonTap}}" data-name="{{marker.name}}" data-id="{{marker.id}}">
+
+        <text class="t3" style="color:{{ marker.status ? 'green' : 'red' }}">{{marker.name}}</text>
+        <!-- 未到达标记点 -->
+        <image class="condition" src="/images/myIcons/navigate.png" hidden="{{marker.status}}"></image>
+        <!-- 未完成标记点任务 -->
+        <image class="condition" src="/images/myIcons/workDoing.png" hidden="{{!marker.status||marker.success}}"></image>
+        <!-- 完成标记点任务 -->
+        <image class="condition" src="/images/myIcons/workFinish.png" hidden="{{!marker.success}}"></image>
+        <image class="rightArrow" src="/images/rightArrow.png"></image>
+    </view>
+
+    <image src="/images/myIcons/propBag.png" class="propBag" bindtap="showBag"></image>
+    <image src="/images/myIcons/propBag.png" class="taskList" bindtap="{{taskController}}"></image>
+    <view class="window" hidden="{{!showBag}}">
+        <text>道具包</text>
+        <view class="propBagWindow" wx:for="{{propBag}}" wx:key="index">
+            <view class="propBag-item">
+                <image class="propBag-image" src="{{item.imageUrl}}"></image>
+            </view>
+            <text class="propBag-text">{{item.number}}</text>
+        </view>
+        <button style="width:22vw" class="close-button" bindtap="closeBag">关闭</button>
+    </view>
+</view>

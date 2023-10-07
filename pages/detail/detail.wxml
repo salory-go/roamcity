@@ -1,0 +1,33 @@
+<!--pages/detail/detail.wxml-->
+
+<!-- <image src="\images\header\1.png" mode="widthFix" style="width: 300px; height: 200px;"></image> -->
+
+    <view class="topic">
+    <image src="../../images/destination/divide_l.png"></image>
+    <text>方案详情</text>
+    <image src="../../images/destination/divide_r.png"></image>
+    </view>
+
+    <view class="theme">
+    <image class="img" src="/images/header/1.png" mode="aspectFit"></image>
+    <text class="text">丰富路-南台巷-王府大街-国创园</text>
+    <image class="img-bottom" src="/images/header/2.png" mode="aspectFit"></image>
+    </view>
+
+  <view class="typesetting">
+  <text>丰富路\n路如其名，丰富\n</text>
+  <image src="/images/pictures/1.jpg" mode="aspectFit"></image>
+  <text>在白色宫殿咖啡馆\n或是在南台巷\n挑一家咖啡店\n清醒一下你的清晨</text>
+  <image src="/images/pictures/2.jpg" mode="aspectFit"></image>
+  <text>二条商店不大\n却足够让你逛上整整一上午\n</text>
+  <image src="/images/pictures/3.jpg" mode="aspectFit"></image>
+  <text>去芳婆糕团店\n来一块清凉解暑的冰酒酿\n</text>
+  <image src="/images/pictures/4.jpg" mode="aspectFit"></image>
+  <text>然后去国创园吧\n各色各样的楼里\n有各色各样的展\n各色各样的咖啡馆\n以及各色各样的美味与醉意\n</text>
+  <image src="/images/pictures/5.jpg" mode="aspectFit"></image>
+  <image src="/images/pictures/6.jpg" mode="aspectFit"></image>
+  </view>
+
+
+
+<button class="container" type="primary" bindtap="addStar" >收藏</button>

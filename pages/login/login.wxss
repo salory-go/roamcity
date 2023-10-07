@@ -1,0 +1,9 @@
+/* pages/login/login.wxss */
+.welcome{
+    height: 800rpx;
+    display: flex;
+    font-size: 48rpx;
+    margin-top: 150rpx;
+    justify-content: center;
+}
+  

@@ -1,0 +1,40 @@
+.container {
+    padding: 20rpx;
+  }
+  
+  .booking-list {
+    margin-top: 20rpx;
+  }
+  
+  .booking-item {
+    margin-bottom: 20rpx;
+    padding: 20rpx;
+    border: 1rpx solid #ddd;
+    border-radius: 4rpx;
+  }
+  
+  .booking-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .booking-name {
+    font-size: 28rpx;
+    font-weight: bold;
+  }
+  
+  .booking-price {
+    color: #999;
+    margin-top: 10rpx;
+  }
+  
+  .booking-time {
+    color: #999;
+    margin-top: 10rpx;
+  }
+  
+  .booking-description {
+    color: #666;
+    margin-top: 10rpx;
+  }
+  

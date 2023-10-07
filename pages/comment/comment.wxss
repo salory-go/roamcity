@@ -1,0 +1,143 @@
+.container {
+    padding: 20rpx;
+  }
+  
+  .profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20rpx;
+  }
+  
+  .avatar {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    margin: 10rpx;
+  }
+  
+  .profile-info {
+    margin-left: 20rpx;
+    margin: 10rpx;
+  }
+  
+  .nickname {
+    font-size: 32rpx;
+    font-weight: bold;
+    margin: 10rpx;
+  }
+  
+  .city {
+    color: #999;
+    margin-top: 10rpx;
+    margin: 10rpx;
+  }
+  
+  .travel-history {
+    margin: 10rpx;
+    color: #666;
+    margin-top: 10rpx;
+  }
+  
+  .dynamic {
+    margin-bottom: 20rpx;
+  }
+  
+  .dynamic-textarea {
+    width: 100%;
+    height: 120rpx;
+    padding: 10rpx;
+    font-size: 28rpx;
+    border: 1rpx solid #ddd;
+    border-radius: 4rpx;
+  }
+  
+  .dynamic-list {
+    border: 1rpx solid #efefef;
+  }
+  
+  .dynamic-item {
+    margin-bottom: 20rpx;
+    padding: 20rpx;
+    border: 1rpx solid #ddd;
+    border-radius: 4rpx;
+  }
+  
+  .dynamic-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    margin-bottom: 10rpx;
+  }
+
+  .dynamic-user{
+    width: 100%;
+    display: flex;
+    margin: 20rpx;
+  }
+  
+  .dynamic-content {
+    margin: 40rpx;
+  }
+  
+  .dynamic-text {
+    font-size: 28rpx;
+    color: #333;
+  }
+  
+  .interaction {
+    height: 60rpx;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10rpx;
+    margin-bottom: 40rpx;
+  }
+  
+  .like-button,
+  .comment-button {
+    width: 10rpx;
+    height: 50rpx;
+    line-height: 20rpx;
+    text-align: center;
+    color: #333;
+    font-size: 24rpx;
+    border-radius: 4rpx;
+    margin-right: 10rpx;
+  }
+  
+  .comments {
+    margin-top: 10rpx;
+  }
+  
+  .comment {
+    margin-top: 10rpx;
+  }
+  
+  .comment-text {
+    color: #666;
+  }
+
+  .input-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20rpx;
+  }
+  
+  .input-box {
+    height: 60rpx;
+    padding: 10rpx;
+    font-size: 28rpx;
+    border: 1rpx solid #ddd;
+    border-radius: 4rpx;
+    width: 1200rpx;
+  }
+
+  .send-button{
+      background: rgb(38, 175, 255);
+      width: 20rpx;
+      padding-left: 10rpx;
+      padding-right: 10rpx;
+  }
+  

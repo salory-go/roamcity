@@ -1,0 +1,39 @@
+.container {
+    padding: 20rpx;
+  }
+  
+  .message-item {
+    border: 1rpx solid #efefef;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20rpx;
+  }
+  
+  .avatar {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+  }
+  
+  .message-info {
+    margin-left: 20rpx;
+  }
+  
+  .message-name {
+      margin-right: 20rpx;
+    font-size: 28rpx;
+    font-weight: bold;
+  }
+  
+  .message-content {
+    color: #666;
+    margin-top: 10rpx;
+  }
+
+  .newMessage{
+    height: 60rpx;
+    width: 60rpx;
+    align-self: top;
+  }
+  
