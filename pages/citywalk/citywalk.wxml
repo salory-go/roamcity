@@ -5,7 +5,7 @@
     </view>
 
     <view class="place">
-        <map id="myMap" subkey="{{key}}" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" layer-style="1" style="width: 100%; height: {{mapHeight-150}}px;" markers="{{markersShow}}" show-location="{{true}}" bindregionchange="regionChange" bindmarkertap="markerTap" polygons="{{polygons}}">
+        <map id="myMap" subkey="{{key}}" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" layer-style="1" style="width: 100%; height: {{mapHeight-150}}px;" markers="{{markers}}" show-location="{{true}}" bindregionchange="regionChange" bindmarkertap="markerTap" polygons="{{polygons}}">
         </map>
     </view>
 
@@ -62,5 +62,13 @@
             <text class="propBag-text">{{item.number}}</text>
         </view>
         <button style="width:22vw" class="close-button" bindtap="closeBag">关闭</button>
+    </view>
+
+    <view class="window" hidden="{{!showGuide}}">
+        <view class="guide-passage">
+            <text class="guide-name">{{guide.name}}</text>
+            <text class="guide-text">{{guide.text}}</text>
+        </view>
+        <button style="width:22vw" class="close-button" bindtap="closeGuide">关闭</button>
     </view>
 </view>

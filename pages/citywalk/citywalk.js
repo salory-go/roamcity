@@ -32,26 +32,59 @@ Page({
         markersShow: [],
         showTaskPotins: false,
         taskController: "showTask",
-        polygon: [{
-            points: [{
-              latitude: 32.027889,
-              longitude: 118.77961
-            }, {
-              latitude: 32.023384,
-              longitude: 118.783377
-            }, {
-              latitude: 32.024928,
-              longitude: 118.781619
-            }],
-            strokeWidth: 3,
-            strokeColor: '#FF0000',
-            fillColor: 'rgba(0,0,0,0)',
-            dashArray:[10,10],
-          }],
+        showGuide: false,
+    },
+
+    closeGuide() {
+        this.setData({
+            showGuide: false,
+        })
+    },
+
+    showGuide(guide) {
+        this.setData({
+            guide: guide,
+            showGuide: true,
+        })
+    },
+
+    guideCheckIn() {
+        var lat = this.data.latitude
+        var lon = this.data.longitude
+        var guides = this.data.guides
+        for (var i = 0; i < guides.length; i++) {
+            if (guides[i].status) continue
+            var distance = this.getDistance(lat, lon, guides[i].latitude, guides[i].longitude)
+            if (distance <= 20) {
+                guides[i].status = true
+                this.showGuide(guides[i])
+            }
+        }
+        this.setData({
+            guides: guides
+        })
+    },
+
+    getGuidesByIds(ids) {
+        wx.cloud.callFunction({
+            name: "getGuideByIds",
+            data: {
+                ids: ids
+            }
+        }).then(res => {
+            var guides = res.result
+            guides.forEach(item => {
+                item.status = false
+            })
+            this.setData({
+                guides: guides
+            })
+        })
     },
 
     markerTap(e) {
-        this.showWork(this.data.markers[e.markerId - 1])
+        console.log(e)
+        this.showWork(this.data.markers[5 - e.markerId])
     },
 
     closeTask() {
@@ -398,20 +431,6 @@ Page({
     },
     //调用方法获取必要信息
     onLoad(options) {
-        // let markersCheck = this.data.markers
-        // markersCheck.push({
-        //     _id:"111",
-        //     height:"30rpx",
-        //     id:6,
-        //     latitude:31.915589,
-        //     longitude:118.78705,
-        //     name:"hehai",
-        //     taskIds:null,
-        //     width:"30rpx"
-        // })
-        // this.setData({
-        //     markersCheck: markers,
-        // })
         var data = wx.getStorageSync('data')
         this.setData({
             data: data
@@ -421,7 +440,8 @@ Page({
         this.getCityWalk(data.citywalk.id)
         setInterval(() => {
             this.updateData();
-            this.locationCheckIn()
+            this.locationCheckIn();
+            this.guideCheckIn();
         }, 5000); // 间隔时间为5秒
     },
     //获取服务对象
@@ -438,15 +458,16 @@ Page({
                 points: cityWalk.polygons[0].points,
                 strokeWidth: 3,
                 strokeColor: '#FF0000',
-                fillColor: '#00000000',//这里只能用十六进制，不能用rgb
-                dashArray:[10,10],
-              }
+                fillColor: '#00000000', //这里只能用十六进制，不能用rgb
+                dashArray: [10, 10],
+            }
             polygons.push(polygon)
             this.setData({
                 all: cityWalk.markersIds.length,
                 markersIds: cityWalk.markersIds,
-                polygons: polygons
+                polygons: polygons,
             })
+            this.getGuidesByIds(cityWalk.guidesIds)
             this.getMarkersByIds()
         })
 
@@ -523,6 +544,10 @@ Page({
             success: (res) => {
                 const currentLatitude = res.latitude;
                 const currentLongitude = res.longitude;
+                this.setData({
+                    latitude: currentLatitude,
+                    longitude: currentLongitude,
+                })
                 // 遍历markers数组，与当前位置进行距离计算
                 var markersShow = this.data.markersShow
                 var markers = this.data.markers
@@ -530,10 +555,14 @@ Page({
                 for (var i = 0; i < markers.length; i++) {
                     if (markers[i].status) continue
                     var distance = this.getDistance(currentLatitude, currentLongitude, markers[i].latitude, markers[i].longitude)
-                    if (distance <= 20) {
+                    if (distance <= 30) {
                         markers[i].status = true
                         markersShow.push(markers[i])
                         this.showWork(markers[i])
+                        let finished = this.data.finished + 1
+                        this.setData({
+                            finished: finished
+                        })
                     }
                 };
 

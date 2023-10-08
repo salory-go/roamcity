@@ -209,3 +209,19 @@
     top: 5%;
     left: 15%;
 }
+
+.guide-name{
+    font-size: 50rpx;
+    position: relative;
+    padding-bottom: 20rpx;
+}
+
+.guide-text{
+    position: relative;
+}
+
+.guide-passage{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30rpx;
+}
