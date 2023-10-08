@@ -5,6 +5,7 @@
 }
 
 .J1 {
+    height: 50rpx;
     padding-top: 20rpx;
     padding-bottom: 20rpx;
     display: flex;

@@ -5,7 +5,7 @@
     </view>
 
     <view class="place">
-        <map id="myMap" subkey="{{key}}" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" layer-style="1" style="width: 100%; height: {{mapHeight-215}}px;" markers="{{markersShow}}" show-location="{{true}}" bindregionchange="regionChange" bindmarkertap="markerTap" polygons="{{polygon}}">
+        <map id="myMap" subkey="{{key}}" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" layer-style="1" style="width: 100%; height: {{mapHeight-150}}px;" markers="{{markersShow}}" show-location="{{true}}" bindregionchange="regionChange" bindmarkertap="markerTap" polygons="{{polygons}}">
         </map>
     </view>
 
@@ -39,7 +39,7 @@
         </view>
     </view>
 
-    <view hidden="{{!showTaskPoints}}" wx:for="{{markers}}" wx:for-item="marker" wx:key="id" class="container" bindtap="{{otherButtonTap}}" data-name="{{marker.name}}" data-id="{{marker.id}}">
+    <view hidden="{{!showTaskPoints}}" wx:for="{{markersShow}}" wx:for-item="marker" wx:key="id" class="container" bindtap="{{otherButtonTap}}" data-name="{{marker.name}}" data-id="{{marker.id}}">
 
         <text class="t3" style="color:{{ marker.status ? 'green' : 'red' }}">{{marker.name}}</text>
         <!-- 未到达标记点 -->

@@ -14,8 +14,8 @@ Page({
         mapHeight: null,
         referer: 'CityWalk',
         markers: [],
-        finished: 1,
-        all: 1,
+        finished: 0,
+        all: 0,
         markerWorkStatus: false,
         showWindow: false,
         showBag: false,
@@ -433,9 +433,19 @@ Page({
             }
         }).then(res => {
             var cityWalk = res.result.data
+            var polygons = []
+            var polygon = {
+                points: cityWalk.polygons[0].points,
+                strokeWidth: 3,
+                strokeColor: '#FF0000',
+                fillColor: '#00000000',//这里只能用十六进制，不能用rgb
+                dashArray:[10,10],
+              }
+            polygons.push(polygon)
             this.setData({
                 all: cityWalk.markersIds.length,
-                markersIds: cityWalk.markersIds
+                markersIds: cityWalk.markersIds,
+                polygons: polygons
             })
             this.getMarkersByIds()
         })
