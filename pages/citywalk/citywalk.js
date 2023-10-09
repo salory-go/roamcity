@@ -555,7 +555,7 @@ Page({
                 for (var i = 0; i < markers.length; i++) {
                     if (markers[i].status) continue
                     var distance = this.getDistance(currentLatitude, currentLongitude, markers[i].latitude, markers[i].longitude)
-                    if (distance <= 30) {
+                    if (distance <= markers[i].range) {
                         markers[i].status = true
                         markersShow.push(markers[i])
                         this.showWork(markers[i])
